@@ -1,0 +1,89 @@
+Command-line installation:
+------
+composer create-project laravel/laravel Storio
+*-/-*
+php artisan serve
+npm run dev
+*-/-*
+Edit Your .ENV
+*-/-*
+composer require laravel/breeze --dev
+php artisan breeze:install
+*-/-*
+composer require spatie/laravel-permission
+composer show spatie/laravel-permission
+Adding in config=>provider,,.. Spatie\Permission\PermissionServiceProvider::class,
+php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+*-/-*
+after edit database>migrate>create_user
+php artisan migrate
+php artisan make:seeder UsersTableSeeder
+Edit>>UsersTableSeeder...
+modifi model>user > remove $fillable >> replace protected $guarded = [];
+php artisan migrate:fresh --seed
+*-/-*
+php artisan make:middleware Role
+edit > middleware> role>
+edit kernal >Kernal Add : 'role' => \App\Http\Middleware\Role::class,
+*-/-*
+php artisan make:seeder SeoTableSeeder
+Edit>>SeoTableSeeder...
+php artisan make:model Seo -m
+*-/-*
+php artisan make:controller Frontend/MainController
+*-/-*
+php artisan make:controller Frontend/ProductController
+php artisan make:model Product -m
+php artisan make:model MultiImg -m
+*-/-*
+php artisan make:model ComingProducts -m
+php artisan make:model ExclusiveTimer -m
+php artisan make:model ExclusiveProducts -m
+*-/-*
+php artisan make:model Banner -m
+*-/-*
+php artisan make:controller Frontend/ShopController
+php artisan make:controller Frontend/ContactController
+*-/-*
+php artisan make:model Categories -m
+php artisan make:model Subcategory -m
+php artisan make:model Brand -m
+*-/-*
+php artisan make:controller User/UserController
+composer require intervention/image 
+inside config/app.php :
+=> providers : Intervention\Image\ImageServiceProvider::class,
+=> aliases => 'Image' => Intervention\Image\Facades\Image::class,
+php artisan vendor:publish --provider="Intervention\Image\ImageServiceProviderLaravelRecent"
+*-/-*
+composer require anayarojo/shoppingcart
+$provider=> Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
+'aliases' => 'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
+php artisan vendor:publish --provider="Gloudemans\Shoppingcart\ShoppingcartServiceProvider" --tag="config"
+*-/-*
+php artisan route:cache
+*-/-*
+php artisan make:controller Frontend/CartController
+*-/-*
+composer require stripe/stripe-php
+(strip blade) https://dashboard.stripe.com/apikeys : Publishable key
+(strip controller) https://stripe.com/docs/payments/charges-api : Dynamic statement descriptor => Dynamic statement descriptor => personal token
+php artisan make:model Order -m
+php artisan make:model OrderItem -m
+php artisan migrate
+*-/-*
+php artisan make:model Whishlist -m
+php artisan migrate
+php artisan make:model Compare -m
+*-/-*
+php artisan make:model Contact -m
+------
+php artisan cache:clear
+php artisan view:clear
+------
+composer require realrashid/sweet-alert
+
+--- Backend : ----
+
+php artisan make:controller Backend\Admin\AdminController
+php artisan make:controller Backend\Admin\AcountsController
