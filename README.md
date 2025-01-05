@@ -1,4 +1,4 @@
-![img](https://raw.githubusercontent.com/IbrahimAmin2024/Python/main/Archive/Repos/laravel_ico.png)
+![img](https://raw.githubusercontent.com/DevHezoo/C-main/refs/heads/main/Projects/Archive/Repos/laravel_ico.png)
 
 # Laravel 💥
 
@@ -8,5 +8,5 @@
 ### Stage
 We could actually teach you a lot, to reach `the Moon`
 
-- [Learn](./learn) : Soon.
-- [Projects](./projects) : Under Developing.
+- [Learn](./Learn) : Soon.
+- [Projects](./Projects) : Under Developing.
