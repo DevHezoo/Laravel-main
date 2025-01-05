@@ -6,7 +6,7 @@
 <div align="center">
 <!-- Title: -->
   <a href="https://www.udemy.com/course/laravel-for-beginners-in-arabic-2023/">
-    <img src="https://raw.githubusercontent.com/IbrahimAmin2024/Python/main/Archive/Courses/Udemy_Laravel.png" height="250">
+    <img src="https://raw.githubusercontent.com/DevHezoo/C-main/refs/heads/main/Projects/Archive/Courses/Udemy_Laravel.png" height="250">
   </a>
   </div>
 <br><br>
