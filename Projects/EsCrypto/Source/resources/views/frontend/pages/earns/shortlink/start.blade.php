@@ -1,0 +1,169 @@
+@extends('frontend.main.index')
+@section('start')
+
+
+<!-- Redirection Counter -->
+<script type="text/javascript">
+  var count = 17; // Timer
+  var redirect = "/"; // Target URL
+
+  function countDown() {
+    var timer = document.getElementById("timer"); // Timer ID
+    if (count > 0) {
+      count--;
+      timer.innerHTML = "Checker " + count + " seconds left."; // Timer Message
+      setTimeout("countDown()", 1000);
+    } else {
+        $('.checked').removeClass('d-none');
+        timer.innerHTML = "Checker Done."; // Timer Message
+        $('.s1').html("Completed");
+        $('.s2').html("Connected");
+      // window.location.href = redirect;
+    }
+  }
+</script>
+
+
+<!-- {{Session::GET('Link')}} -->
+        <div class="card mb-3">
+
+            <div class="bg-holder d-none d-lg-block bg-card" style="background-image:url({{ asset('frontend/assets/img/icons/spot-illustrations/corner-4.png') }});">
+            </div>
+
+
+            <div class="card-body position-relative">
+              <div class="row">
+                <div class="col-lg-8">
+
+                  <h3 class="s1">Loading..</h3>
+                </div>
+
+
+            <div class="card-body">
+              <div class="alert alert-warning p-4 mb-0" role="alert">
+                <div class="d-flex"><span class="fab fa-intentionally-kept fs-3"></span>
+                  <div class="flex-1 ms-3">
+                    <h4 class="alert-heading s2">Connecting..</h4>
+        
+
+
+
+
+
+
+            <ul class="bullet-inside ps-0">
+                <p class="fs--1 mb-0">
+    <li style="font-size: 0.8rem;" id="timer"></li>
+                </p>
+            </ul>
+
+        <script type="text/javascript">
+          countDown();
+        </script>
+      </p>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+              </div>
+
+
+<div class="checked d-none">
+
+@if(count(session('LinkVisited')) < \App\Models\Shortlink::where('id', session('ShortlinkIndex'))->first()->visits)
+
+
+@if(count(session('Visiting')) > 0)
+    <button class="btn btn-falcon-warning me-1 mb-1 visit" type="button" onclick="window.location.href='/shortlink/start'">
+        <span class="fa fa-globe"></span> 
+        <span>Continue</span>
+    </button>
+@else
+    <button class="btn btn-falcon-success d-block visit" type="button" onclick="window.location.href='/shortlink/start'">
+        <span class="fa fa-globe"></span> 
+        <span>Confirm</span>
+    </button>
+@endif
+
+
+@else
+    <button class="btn btn-falcon-danger d-block" type="button" onclick="window.location.href='/shortlink/{{ strtolower(session('PageUnit')) }}'">
+        <span class="fa fa-globe"></span> 
+        <span>Back</span>
+    </button>
+@endif
+
+
+
+
+</div>
+
+            </div>
+        </div>
+
+
+          <div class="card mb-3">
+
+                        <div class="bg-holder d-none bg-card" style="background-image:url({{ asset('frontend/assets/img/icons/spot-illustrations/corner-4.png') }});">
+            </div>
+            <div class="card-body text-center">
+
+<iframe data-aa='2306704' src='//ad.a-ads.com/2306704?size=728x90' style='width:728px; height:90px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+
+            </div>
+          </div>
+    
+          <div class="card mb-3">
+
+                        <div class="bg-holder d-none bg-card" style="background-image:url({{ asset('frontend/assets/img/icons/spot-illustrations/corner-4.png') }});">
+            </div>
+            <div class="card-body text-center">
+
+<iframe src='//ads.coinserom.com/publisher?adsunit=323737&serom=3135313931&size=728x90' style='width:728px;height:90px;border:0px;padding:0;background-color: transparent;overflow: auto;'>
+</iframe>
+            </div>
+          </div>
+
+          
+
+<div class="card mb-3">
+
+                        <div class="bg-holder d-none bg-card" style="background-image:url({{ asset('frontend/assets/img/icons/spot-illustrations/corner-4.png') }});">
+            </div>
+            <div class="card-body text-center">
+
+<script type="text/javascript">
+    atOptions = {
+        'key' : '4c407329270ac3120da649058b5b33cf',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+    };
+    document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/4c407329270ac3120da649058b5b33cf/invoke.js"></scr' + 'ipt>');
+</script>
+
+            </div>
+</div>
+
+
+
+<!-- Add these links in the <head> section of your HTML -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <!-- Include jQuery before this script if not already included -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script type="text/javascript">
+    window.onload = function () {
+        $('.visit').on('click', function() {
+            $('.visit').addClass('d-none');
+        });
+    };
+</script>
+
+
+@endsection
