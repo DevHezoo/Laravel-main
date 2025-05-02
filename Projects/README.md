@@ -4,4 +4,4 @@
 
 [Hotel](./Hotel) : Simple Hotel Management & Booking System + SQL.
 
-[Hotel](./Signals) : Simple Signals Trade + SQL.
+[Signals](./Signals) : Simple Signals Trade + SQL.
