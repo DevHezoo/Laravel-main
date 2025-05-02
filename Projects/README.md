@@ -9,3 +9,5 @@
 [Earno](./Earno) : Shorten Links + SQL.
 
 [Talaka](./Talaka) : Learn English Using Ai + SQL.
+
+[EsCrypto](./EsCrypto) : Earn Cryptocurrencies by viewing ads + SQL.
