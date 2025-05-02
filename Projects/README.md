@@ -7,3 +7,5 @@
 [Signals](./Signals) : Signals Trade + SQL.
 
 [Earno](./Earno) : Shorten Links + SQL.
+
+[Talaka](./Talaka) : Learn English Using Ai + SQL.
