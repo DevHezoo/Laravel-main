@@ -1,0 +1,172 @@
+<!-- {{ asset('frontend/main_assets/') }} -->
+
+<!-- Calling The DB to Edit Website Seo Settings -->
+<!-- meta_title meta_author meta_keyword meta_description -->
+@php
+$seo = App\Models\Seo::find(1);
+@endphp
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    @include('frontend.body.header')
+    <!-- Author Meta -->
+    <meta name="author" content="{{ $seo-> meta_author }}">
+    <!-- Meta Description -->
+    <meta name="description" content="{{ $seo-> meta_description }}">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="{{ $seo-> meta_keyword }}">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>Vendor Page</title>
+    <!--
+        CSS
+        ============================================= -->
+    <link rel="stylesheet" href="{{ asset('frontend/main_assets/css/linearicons.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/main_assets/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/main_assets/css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/main_assets/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/main_assets/css/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/main_assets/css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/main_assets/css/nouislider.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/main_assets/css/ion.rangeSlider.css') }}" />
+    <link rel="stylesheet" href="{{ asset('frontend/main_assets/css/ion.rangeSlider.skinFlat.css') }}" />
+    <link rel="stylesheet" href="{{ asset('frontend/main_assets/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/main_assets/css/main.css') }}">
+
+
+    <!--
+        Font
+        ============================================= -->
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/extra/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/extra/fonts/iconic/css/material-design-iconic-font.min.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/extra/fonts/linearicons-v1.0.0/icon-font.min.css') }}">
+
+</head>
+
+<body>
+
+
+	<!-- Start Header Area -->
+	<header class="header_area sticky-header">
+		<div class="main_menu">
+
+
+
+            @include('frontend.body.nav')
+
+
+        </div>
+
+    </header>
+    <!-- End Header Area -->
+	<!-- Start Banner Area -->
+	<section class="banner-area organic-breadcrumb">
+		<div class="container">
+			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+				<div class="col-first">
+					<h1>Vendor Products</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- End Banner Area -->
+
+    <!--================Blog Area =================-->
+    <section style="margin-top:20px" class="blog_area">
+        <div class="container">
+            <div class="row">
+
+            	
+                <div class="col-lg-8">
+                    <div class="blog_left_sidebar">
+
+
+@foreach($products as $key => $product)
+                        <article class="row blog_item">
+                            <div class="col-md-3">
+                                <div class="blog_info text-right">
+                                    <div class="post_tag">
+                                        <a>Product No.&nbsp</a>
+                                        <a class="active">{{$key + 1}}</a>
+                                    </div>
+                                    <ul class="blog_meta list">
+                                        <li><a>{{ $user->username }}<i class="lnr lnr-user"></i></a></li>
+                                        <li><a>{{ $product->created_at }}<i class="lnr lnr-calendar-full"></i></a></li>
+                                        <li><a>0 Views<i class="lnr lnr-eye"></i></a></li>
+                                        <li><a>0 Comments<i class="lnr lnr-bubble"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="blog_post"> 
+                                    <img width="495" height="297" src="{{ asset('/frontend/' .$product->product_thumbnail) }}" alt="">
+                                    <div class="blog_details">
+                                        <a>
+                                            <h2>{{$product->product_slug}}</h2>
+                                        </a>
+                                        <p>{{$product->short_desc}}.</p>
+                                        <a href="/vendor/product/view/{{$product->id}}" class="white_bg_btn">View</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+@endforeach
+
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+
+                    <div class="blog_right_sidebar">
+                        <aside class="single_sidebar_widget author_widget">
+
+                            <!-- <img height="120" width="120" class="author_img rounded-circle" src="{{ (!empty($user->photo)) ? '/frontend/upload/admin_images/'.$admin->photo : '/frontend/upload/no_image.jpg' }}" alt=""> -->
+
+
+                            @if($user->role == 'admin')
+
+                            <img height="120" width="120" class="author_img rounded-circle" src="{{ (!empty($user->photo)) ? '/frontend/upload/admin_images/'.$user->photo : '/frontend/upload/no_image.jpg' }}" alt="">
+
+                            @elseif($user->role == 'vendor')
+
+                            <img height="120" width="120" class="author_img rounded-circle" src="{{ (!empty($user->photo)) ? '/frontend/upload/vendor_images/'.$user->photo : '/frontend/upload/no_image.jpg' }}" alt="">
+
+                            @endif
+
+
+                            <h4>{{ $user->name }}</h4>
+                            <p>{{ $user->username }}</p>
+                            <div class="social_icon">
+                                <a href="{{ $user->social_link }}"><i class="fa fa-facebook"></i></a>
+                            </div>
+                            <p>{{ $user->vendor_short_info }}.</p>
+                        
+                        </aside>
+
+ 
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================Blog Area =================-->
+
+
+
+@include('frontend.body.footer')
+
+@include('frontend.body.cart')
+</body>
+
+</html>
