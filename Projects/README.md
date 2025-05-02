@@ -1,7 +1,9 @@
 # Projects 💥
 
-[Store](./Store) : Simple E-Commerce Platform + SQL.
+[Store](./Store) : E-Commerce Platform + SQL.
 
-[Hotel](./Hotel) : Simple Hotel Management & Booking System + SQL.
+[Hotel](./Hotel) : Hotel Management & Booking System + SQL.
 
-[Signals](./Signals) : Simple Signals Trade + SQL.
+[Signals](./Signals) : Signals Trade + SQL.
+
+[Earno](./Earno) : Shorten Links + SQL.
