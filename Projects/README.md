@@ -1,3 +1,3 @@
 # Projects 💥
 
-> [Store](/Store) : Simple E-Commerce Platform + SQL.
+> [Store](./Store) : Simple E-Commerce Platform + SQL.
