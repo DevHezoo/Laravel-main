@@ -1,4 +1,4 @@
 # Projects 💥
 
-> you can checkout all our projects source code at : [Our Store](https://devia.mysellix.io/).
+> [Store](/store) : Simple E-Commerce Platform + SQL.
 ---
